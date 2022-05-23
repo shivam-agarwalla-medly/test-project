@@ -1,0 +1,4 @@
+{
+  "type": "@medlypharmacy/kotlin-projen.KotlinProject",
+  "name": "test-project"
+}

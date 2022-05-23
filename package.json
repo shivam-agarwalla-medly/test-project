@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "@medlypharmacy/kotlin-projen": "^0.0.21",
+    "projen": "^0.56.28"
+  }
+}
