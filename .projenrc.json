@@ -1,4 +1,19 @@
 {
   "type": "@medlypharmacy/kotlin-projen.KotlinProject",
-  "name": "test-project"
+  "name": "test-project",
+  "buildWorkflowOptions": {
+    "isDetektUsed": false
+  },
+  "defaultBranch": "master",
+  "rootProject": {
+    "features": ["extension"],
+    "plugins": [
+      { "name": "dev.medly.repos", "version": "0.0.8" },
+      { "name": "dev.medly.kotlin", "version": "0.0.8", "apply": false },
+      { "name":  "org.jlleitschuh.gradle.ktlint", "version": "9.2.1" }
+    ]
+  },
+  "modules": [
+    { "path":  "migration", "features":  ["extension", "application"] }
+  ]
 }
