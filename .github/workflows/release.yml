@@ -54,7 +54,7 @@ jobs:
         uses: docker://asyncapi/github-action-for-generator:2.0.0
         with:
           template: "@asyncapi/html-template@0.9.0"
-          filepath: connector/kinesis/spec/*.yml
+          filepath: connector/kinesis/spec/asyncapi.yml
           output: event-spec-html
       - name: Upload Event Spec
         uses: medlypharmacy/s3-artifacts-action@master
