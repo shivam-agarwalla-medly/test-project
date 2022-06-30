@@ -3,6 +3,8 @@ plugins {
     id 'jacoco'
     id 'application'
     id 'com.github.johnrengelman.shadow'
+    id 'io.specgen.gradle'
+    id 'io.micronaut.minimal.application'
 }
 
 apply from: 'extension.gradle'

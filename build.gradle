@@ -4,7 +4,6 @@ plugins {
     id 'dev.medly.repos'
     id 'dev.medly.kotlin'
     id 'dev.medly.detekt'
-    id 'dev.medly.sonar'
     id 'com.github.node-gradle.node'
 }
 

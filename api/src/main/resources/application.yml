@@ -1,0 +1,11 @@
+micronaut:
+  application:
+    name: test-service
+  server:
+    multipart:
+      max-file-size: 10mb
+  function:
+    name: test-service
+  http:
+    client:
+      read-timeout: 10s

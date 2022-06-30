@@ -1,1 +1,35 @@
-mainClassName = "test-application"
+mainClassName = "test.api.Application"
+
+group 'test.service'
+version '0.1'
+
+configurations {
+    devOnly
+}
+
+sourceSets {
+    devOnly {
+        resources.srcDirs = ['src/main/dev-res']
+        java.srcDirs = [] // disable java devOnly dirs
+        compileClasspath += sourceSets.main.runtimeClasspath
+    }
+}
+
+dependencies {
+    implementation "io.micronaut:micronaut-runtime"
+    runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
+    devOnly platform("io.micronaut:micronaut-bom:$micronautVersion")
+    devOnly "io.micronaut:micronaut-http-server-netty"
+}
+
+task runApi(type: JavaExec) {
+    main = "test.api.Application"
+    classpath = sourceSets.main.runtimeClasspath
+    classpath += configurations.devOnly
+    classpath += sourceSets.devOnly.runtimeClasspath
+    jvmArgs('-noverify',
+        '-XX:TieredStopAtLevel=1',
+        '-Dcom.sun.management.jmxremote',
+        "-Dlogback.configurationFile=logback-dev.xml",
+        '-Dmicronaut.environments=dev')
+}

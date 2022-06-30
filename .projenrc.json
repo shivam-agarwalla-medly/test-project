@@ -3,7 +3,7 @@
   "name": "test-project",
   "defaultBranch": "main",
   "rootProject": {
-    "features": ["repos", "kotlin", "detekt", "sonar"]
+    "features": ["repos", "kotlin", "detekt"]
   },
   "globalFeatures": [
     {
@@ -11,6 +11,10 @@
     }
   ],
   "modules": [
-    { "path":  "api", "features":  ["application", "shadow-jar"] }
+    { "path":  "api", "features":  ["application", "shadow-jar"],
+      "plugins": [ { "name": "io.specgen.gradle", "version": "2.1.1720" },
+        { "name": "io.micronaut.minimal.application", "version": "3.4.1" }
+      ]
+    }
   ]
 }

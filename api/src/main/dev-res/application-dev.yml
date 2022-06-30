@@ -1,0 +1,5 @@
+micronaut:
+  server:
+    port: 9000
+  application:
+    name: test-service
