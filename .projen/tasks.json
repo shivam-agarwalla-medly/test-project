@@ -37,9 +37,6 @@
       "steps": [
         {
           "builtin": "run-projenrc-json"
-        },
-        {
-          "spawn": "gradle-wrapper"
         }
       ]
     },

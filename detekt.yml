@@ -34,3 +34,16 @@ console-reports:
     - ComplexityReport
     - NotificationReport
     - FileBasedFindingsReport
+formatting:
+  AnnotationOnSeparateLine:
+    active: false
+  ArgumentListWrapping:
+    active: false
+  MultiLineIfElse:
+    active: false
+  NoEmptyFirstLineInMethodBlock:
+    active: false
+  SpacingBetweenDeclarationsWithAnnotations:
+    active: false
+  TrailingComma:
+    active: false
