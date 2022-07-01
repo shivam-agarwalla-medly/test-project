@@ -13,4 +13,4 @@ models:
   Person:
     object:
       name: string
-      age: number
+      age: int
