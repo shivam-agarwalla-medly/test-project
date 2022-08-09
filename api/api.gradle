@@ -3,8 +3,19 @@ plugins {
     id 'jacoco'
     id 'application'
     id 'com.github.johnrengelman.shadow'
-    id 'io.specgen.gradle'
-    id 'io.micronaut.minimal.application'
 }
 
 apply from: 'extension.gradle'
+mainClassName = "test.api.ApplicationKt"
+task bundleDeployableZip(type: Zip) {
+    archiveFileName = "deployable.zip"
+    destinationDirectory = layout.buildDirectory.dir('distributions')
+    from "${rootProject.rootDir}/infra"
+    from "build/libs/api-all.jar"
+    
+    dependsOn "shadowJar"
+    build.finalizedBy(bundleDeployableZip)
+}
+shadowJar {
+    mergeServiceFiles()
+}

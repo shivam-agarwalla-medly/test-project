@@ -11,10 +11,10 @@
     }
   ],
   "modules": [
-    { "path":  "api", "features":  ["application", "shadow-jar"],
-      "plugins": [ { "name": "io.specgen.gradle", "version": "2.1.1742" },
-        { "name": "io.micronaut.minimal.application", "version": "3.4.1" }
-      ]
+    { "path":  "api", "features": [
+      {
+        "name": "deployable", "config": { "mainClassName": "test.api.ApplicationKt" }
+      }]
     }
   ]
 }

@@ -1,8 +1,5 @@
 mainClassName = "test.api.Application"
 
-group 'test.service'
-version '0.1'
-
 configurations {
     devOnly
 }
@@ -19,6 +16,7 @@ dependencies {
     implementation "io.micronaut:micronaut-runtime"
     runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
     devOnly platform("io.micronaut:micronaut-bom:$micronautVersion")
+    implementation platform("io.micronaut:micronaut-bom:$micronautVersion")
     devOnly "io.micronaut:micronaut-http-server-netty"
 
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
@@ -35,28 +33,4 @@ task runApi(type: JavaExec) {
         '-Dcom.sun.management.jmxremote',
         "-Dlogback.configurationFile=logback-dev.xml",
         '-Dmicronaut.environments=dev')
-}
-
-specgen {
-    serviceKotlin {
-        jsonlib.set("jackson")
-        packageName.set("test.specapi")
-        specFile.set(file("src/main/dev-res/spec.yaml"))
-        servicesPath.set(file("src/main/kotlin"))
-        //swaggerPath.set(file("src/main/resources/static/docs/swagger.yaml"))
-    }
-    clientKotlin {
-        jsonlib.set("jackson")
-        packageName.set("test.specapi")
-        specFile.set(file("src/main/dev-res/spec.yaml"))
-        //servicesPath.set(file("src/main/kotlin"))
-        //swaggerPath.set(file("src/main/resources/static/docs/swagger.yaml"))
-    }
-    modelsKotlin {
-        jsonlib.set("jackson")
-        //packageName.set("test.specapi")
-        specFile.set(file("src/main/dev-res/spec.yaml"))
-        //servicesPath.set(file("src/main/kotlin"))
-        //swaggerPath.set(file("src/main/resources/static/docs/swagger.yaml"))
-    }
 }

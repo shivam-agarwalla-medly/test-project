@@ -5,7 +5,6 @@ node_modules/
 !/.projen/deps.json
 !/.projen/files.json
 !/.snyk
-!/./detekt.yml
 build/
 target/
 node_modules
@@ -24,12 +23,13 @@ out/
 *.log
 .serverless
 Thumbs.db
+!/.editorconfig
 !/.github/workflows/upgrade-project.yml
 !/.github/workflows/snyk.yml
 !/.github/pull_request_template.md
 !/.github/CODEOWNERS
 !/.github/settings.yml
+!/./detekt.yml
 !/settings.gradle
-!/.editorconfig
 !/api/api.gradle
 !/build.gradle

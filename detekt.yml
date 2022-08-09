@@ -9,6 +9,10 @@ style:
   active: true
   MandatoryBracesIfStatements:
     active: false
+complexity:
+  active: true
+  LabeledExpression:
+    active: false
 naming:
   active: true
   FunctionMaxLength:
@@ -38,6 +42,8 @@ formatting:
   AnnotationOnSeparateLine:
     active: false
   ArgumentListWrapping:
+    active: false
+  ForbiddenComment:
     active: false
   MultiLineIfElse:
     active: false
